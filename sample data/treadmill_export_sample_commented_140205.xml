@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<measurement xmlns="http://www.zebris.de/measurements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.zebris.de/data file://c:/zebris_measurements.xsd">
+	<type>gait_treadmill</type> <!-- record type -->
+	<program>Zebris Shell</program> <!-- name of the creating software -->
+	<program_version>1.11.3</program_version> <!-- version of the creating software -->
+	<format_version>1.0</format_version> <!-- version of the data definition used in this file -->
+	<measuring_system>text describing hardware info here</measuring_system> <!-- hardware information, reserved for later purpose -->
+	<patient> <!-- patient information, only one patient per file -->
+		<first_name>Name</first_name>
+		<last_name>Surname</last_name>
+		<born>1985-06-05</born>
+		<sex>male</sex>
+		<code>abcde</code>
+	</patient>
+	<measured>2013-03-14T13:12:49Z</measured> <!-- record date -->
+	<description>sample record</description> <!-- record description -->
+	<movements>
+		<movement>
+			<type>gait</type>
+			<id>gait.1</id>
+			<clips>
+				<clip> <!-- clip in one recording (e.g. gait_floor can have multiple clips) -->
+					<type>events</type>
+					<id>events</id>
+					<count>2</count> <!-- number of events in this file (e.g. steps) -->
+					<data>
+						<event>
+							<type>gait_step</type> <!-- data taken only from analyzed interval in viewer -->
+							<id>event.1</id>
+							<begin>1.2</begin> <!-- time in seconds where the first pressure of this step appears -->
+							<end>2.3</end> <!-- time in seconds where the last pressure of this step is present -->
+							<side>left</side> <!-- foot side recognized by automatic detection or user setting -->
+							<heel> <!-- position of the heel point for rotation line -->
+								<x>11.2</x>
+								<y>11.5</y> <!-- in absolute cells on the super long way -->
+							</heel>
+							<toe> <!-- position of the toe point for rotation line -->
+								<x>12.2</x>
+								<y>12.5</y> <!-- in absolute cells on the super long way -->
+							</toe>
+							<max> <!-- maximum pressure plot -->
+								<cell_begin> <!-- lower left corner of the bounding box for the maximum pressure plot -->
+									<x>10</x> 
+									<y>10</y> <!-- in absolute cells on the super long way -->
+								</cell_begin>
+								<cell_count> <!-- size of the bounding box for the maximum pressure plot [sensors] -->
+									<x>2</x>
+									<y>3</y>
+								</cell_count>
+								<cells> <!-- single sensors inside bounding box, separated by whitespace -->
+									1.0 1.0
+									2.0 2.5
+									0.5 1.0
+								</cells>
+							</max>
+							<rollover> <!-- all frames for the rollover of this step -->
+								<type>matrix</type> <!-- record data type -->
+								<id>pressure_matrix.treadmill.1</id>
+								<begin>1.2</begin>  <!-- time in seconds where the first data quant appears -->
+								<frequency>100.0</frequency> <!-- measurement frequency used -->
+								<count>2</count>  <!-- number of frames in this rollover -->
+								<units>N/cm2</units> 
+								<cell_count>  <!-- size of the bounding box needed by all rollover frames -->
+									<x>64</x>
+									<y>128</y>
+								</cell_count>
+								<cell_size>  <!-- cell size in [mm] -->
+									<x>10.0</x>
+									<y>10.0</y>
+								</cell_size>
+								<data>
+									<quant>
+										<cell_begin>  <!-- see above -->
+											<x>10</x>
+											<y>10</y>
+										</cell_begin>
+										<cell_count>  <!-- see above -->
+											<x>2</x>
+											<y>3</y>
+										</cell_count>
+										<cells>  <!-- see above -->
+											1.0 1.0
+											2.0 2.5
+											0.5 1.0
+										</cells>
+									</quant>
+									<quant>  <!-- see above -->
+										<cell_begin>
+											<x>10</x>
+											<y>10</y> <!-- in absolute cells on the super long way -->
+										</cell_begin>
+										<cell_count>
+											<x>2</x>
+											<y>3</y>
+										</cell_count>
+										<cells>
+											1.0 1.0
+											2.0 2.5
+											0.5 1.0
+										</cells>
+									</quant>
+								</data>
+							</rollover>
+						</event>
+						<event> <!-- see above -->
+							<type>gait_step</type>
+							<id>event.2</id>
+							<begin>2.5</begin>
+							<end>4.7</end>
+							<side>right</side>
+							<heel>
+								<x>11.2</x>
+								<y>11.5</y>
+							</heel>
+							<toe>
+								<x>12.2</x>
+								<y>12.5</y>
+							</toe>
+							<max>
+								<cell_begin>
+									<x>10</x>
+									<y>10</y>
+								</cell_begin>
+								<cell_count>
+									<x>2</x>
+									<y>3</y>
+								</cell_count>
+								<cells>
+									1.0 1.0
+									2.0 2.5
+									0.5 1.0
+								</cells>
+							</max>
+							<rollover>
+								<type>matrix</type>
+								<id>pressure_matrix.treadmill.1</id>
+								<begin>2.3</begin>
+								<frequency>100.0</frequency>
+								<count>2</count>
+								<units>N/cm2</units>
+								<cell_count>
+									<x>64</x>
+									<y>128</y>
+								</cell_count>
+								<cell_size>
+									<x>10.0</x>
+									<y>10.0</y>
+								</cell_size>
+								<data>
+									<quant>
+										<cell_begin>
+											<x>10</x>
+											<y>10</y>
+										</cell_begin>
+										<cell_count>
+											<x>2</x>
+											<y>3</y>
+										</cell_count>
+										<cells>
+											1.0 1.0
+											2.0 2.5
+											0.5 1.0
+										</cells>
+									</quant>
+									<quant>
+										<cell_begin>
+											<x>10</x>
+											<y>10</y>
+										</cell_begin>
+										<cell_count>
+											<x>2</x>
+											<y>3</y>
+										</cell_count>
+										<cells>
+											1.0 1.0
+											2.0 2.5
+											0.5 1.0
+										</cells>
+									</quant>
+								</data>
+							</rollover>
+						</event>
+					</data>
+				</clip>
+				<clip> <!-- optional, maybe just for stance -->
+					<type>matrix</type>
+					<id>pressure_matrix.treadmill.1</id>
+					<begin>0.0</begin>
+					<frequency>100.0</frequency>
+					<count>2</count>
+					<units>N/cm2</units>
+					<cell_count>
+						<x>64</x>
+						<y>128</y>
+					</cell_count>
+					<cell_size>
+						<x>10.0</x>
+						<y>10.0</y>
+					</cell_size>
+					<data>
+						<quant>
+							<cell_begin>
+								<x>10</x>
+								<y>10</y>
+							</cell_begin>
+							<cell_count>
+								<x>2</x>
+								<y>3</y>
+							</cell_count>
+							<cells>
+								1.0 1.0
+								2.0 2.5
+								0.5 1.0
+							</cells>
+						</quant>
+						<quant>
+							<cell_begin>
+								<x>10</x>
+								<y>10</y>
+							</cell_begin>
+							<cell_count>
+								<x>2</x>
+								<y>3</y>
+							</cell_count>
+							<cells>
+								1.0 1.0
+								2.0 2.5
+								0.5 1.0
+							</cells>
+						</quant>
+					</data>
+				</clip>
+				<clip> 
+					<type>analog</type>
+					<id>velocity.treadmill.1</id>
+					<begin>0.0</begin>
+					<frequency>100.0</frequency>
+					<count>2</count>
+					<units>m/s</units>
+					<data>
+						<quant>1.0</quant>
+						<quant>1.0</quant>
+					</data>
+				</clip>
+			</clips>
+		</movement>
+	</movements>
+</measurement>
