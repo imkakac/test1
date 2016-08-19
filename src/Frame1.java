@@ -22,6 +22,7 @@ public class Frame1 {
 	private JFrame frame;
 	private JLabel lblStatus;
 	private BufferedImage icon;
+	private File selectedFile;
 	//private icon Image;
 	/**
 	 * Launch the application.
@@ -71,6 +72,7 @@ public class Frame1 {
 					File selectedFile = chooser.getSelectedFile();
 					myString = "Opening: " + selectedFile.getName() + ".";
 					lblStatus.setText("<html>" + myString + "<html>");
+//					ReadZebrisXML.main(selectedFile);
 				} else {
 					myString = "Open command cancelled by user.";
 					lblStatus.setText("<html>" + myString + "<html>");	
@@ -78,9 +80,13 @@ public class Frame1 {
 					//int lineNumber = 1;
 					//final int Max_lines = 10;
 					//while(in.has net)
+					
 				}
 			}
 		});
+		
+		
+		
 		btnImportXml.setBounds(221, 162, 124, 23);
 		frame.getContentPane().add(btnImportXml);
 		
