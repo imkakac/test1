@@ -32,13 +32,38 @@ public class ReadZebrisXML {
 
     	System.out.println("----------------------------");
 //	get patient info
-    	NodeList nList = doc.getElementsByTagName("patient");
+    	NodeList nList = doc.getElementsByTagName("patient"); 
     	int listLength = nList.getLength();
+    	NodeList cellSizeList = doc.getElementsByTagName("cell_size");
+    	Element cellSizeElement = (Element)cellSizeList.item(0);
+//    	String cellSizeX = cellSize.getFirstChild().getNodeValue();
+    	String cellSizeX = cellSizeElement.getElementsByTagName("x").item(0).getFirstChild().getTextContent();
+    	float x = Float.parseFloat(cellSizeX);
+    	String cellSizeY = cellSizeElement.getElementsByTagName("y").item(0).getFirstChild().getTextContent();
+    	float y = Float.parseFloat(cellSizeY);
+    	float cellArea = x*y;
+    	System.out.println("\nCell Size = " + x + " X " +y);
+    	
+    	String dateMeasured = doc.getElementsByTagName("measured").item(0).getTextContent();
+    	System.out.println("\nDate = " + dateMeasured);    
+    	
+    	String fileName = doc.getElementsByTagName("description").item(0).getTextContent();
+    	System.out.println("\nFileName = " + fileName);    
+
+    	float frequency = Float.parseFloat(doc.getElementsByTagName("frequency").item(0).getTextContent());
+    	System.out.println("\nFrequency = " + frequency);
+    	
+    	String endTime = doc.getElementsByTagName("end").item(doc.getElementsByTagName("end").getLength()-1).getTextContent();
+    	int frame = Math.round(Float.parseFloat(endTime)*frequency);
+    	System.out.println("\nEndTime = " + (1/frequency*(frame-1)) + " ms");
+    	System.out.println("\nFrameNumber = " + frame);
+    	
+    	
     	System.out.println("\nlistLength = " + listLength);
     	for (int temp = 0; temp < nList.getLength(); temp++) {
 
     		Node nNode = nList.item(temp);
-
+ 
 //    		System.out.println("Current Element :" + nNode.getNodeName());
 		
     		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -52,10 +77,10 @@ public class ReadZebrisXML {
     			}
     		}
 	
-    	nList = doc.getElementsByTagName("cells");
-	
-    	listLength = nList.getLength();
-    	System.out.println("\nlistLength = " + listLength);
+//    	nList = doc.getElementsByTagName("cells");
+//	
+//    	listLength = nList.getLength();
+//    	System.out.println("\nlistLength = " + listLength);
     	for (int temp = 0; temp < nList.getLength(); temp++) {
 
     		Node nNode = nList.item(temp);
@@ -71,7 +96,11 @@ public class ReadZebrisXML {
 	
     	nList = doc.getElementsByTagName("event");
     	listLength = nList.getLength();
-    	System.out.println("\nEventnumber = " + listLength);
+    	System.out.println("\nEventNumber = " + listLength);
+    	
+    	for (int temp = 0; temp < listLength; temp++) {
+    		
+    	}
     	
     	} catch (Exception e) {
     		e.printStackTrace();
